@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/static-website
+hooks:
+  BeforeInstall:
+    - location: scripts/stop_server.sh
+      timeout: 300
+  AfterInstall:
+    - location: scripts/start_server.sh
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/deploy_container.sh
+      timeout: 300
