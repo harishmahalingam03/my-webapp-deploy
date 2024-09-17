@@ -4,15 +4,8 @@ files:
   - source: /
     destination: /home/ubuntu/static-website
 hooks:
-  BeforeInstall:
-    - location: scripts/stop_server.sh
-      timeout: 300
-      runas: root
   AfterInstall:
-    - location: scripts/start_server.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
-  ApplicationStart:
-    - location: scripts/deploy_container.sh
-      timeout: 300
-      runas: root
+
