@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Update package index and install apache2 and unzip
+# Update package index and install docker.io
 sudo apt-get update -y
 sudo apt-get install docker.io -y
 sudo apt-get install unzip
